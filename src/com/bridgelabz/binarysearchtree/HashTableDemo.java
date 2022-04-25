@@ -1,5 +1,9 @@
 package com.bridgelabz.binarysearchtree;
-
+/*
+ * @author : Ashwini
+ * Ability to create the binary tree shown in the figure 
+ * - Check if all are added with using size method in Binary Tree
+ */
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -31,5 +35,8 @@ public class HashTableDemo {
         //Show Frequent Words Count
         linkedList.showFrequent();
 
+        //Insert Map Item in Linked List
+        linkedList.mapInList();
+        linkedList.showLinkedList();
     }
 }
