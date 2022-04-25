@@ -1,9 +1,5 @@
 package com.bridgelabz.binarysearchtree;
-/*
- * @author : Ashwini
- * Ability to create the binary tree shown in the figure 
- * - Check if all are added with using size method in Binary Tree
- */
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -11,7 +7,7 @@ import java.util.Scanner;
 public class HashTableDemo {
     public static void main(String[] args) {
         //Welcome message for User
-        System.out.println("Welcome to Hash Table and Binary Tree Problem.");
+        System.out.println("Welcome to Hash Table and Binary Tree Problem");
 
         //Creating Linked List Object
         LinkedList<String> linkedList = new LinkedList();
@@ -36,7 +32,13 @@ public class HashTableDemo {
         linkedList.showFrequent();
 
         //Insert Map Item in Linked List
-        linkedList.mapInList();
+       // linkedList.mapInList();
+       // linkedList.showLinkedList();
+
+        //Remove the Word from Linked List
+        System.out.println("Enter the Word to Remove from String : ");
+        linkedList.removeWord(sc.next());
+
         linkedList.showLinkedList();
     }
 }

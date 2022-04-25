@@ -1,11 +1,13 @@
 package com.bridgelabz.binarysearchtree;
-
+/*
+ * @author : Ashwini
+ * Ability to search 63 in the Binary Tree
+ * - Implement Search method and recursively search left or right nodes to find 63
+ */
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
 
-class Node <T> {
+class Node <T extends Comparable<T>> {
     public T data;
     public Node next;
 
@@ -16,17 +18,15 @@ class Node <T> {
     }
 }
 
-class LinkedList <T> {
+class LinkedList <T extends Comparable<T>> {
 
     Map<T,Integer> wordsFrequency = new HashMap<T,Integer>();
-
-    int location = 0;
 
     Node head;
     Node tail;
     //Insert Data from Last
     public void insertLast(T data) {
-        Node<T> newNode = new Node(data);
+        Node newNode = new Node(data);
         if(tail == null) {
             head = newNode;
             tail = newNode;
@@ -34,8 +34,6 @@ class LinkedList <T> {
             tail.next = newNode;
             tail = newNode;
         }
-        location++;
-        System.out.println("Location:"+location);
     }
 
     //Display Node in Linked List
@@ -53,7 +51,6 @@ class LinkedList <T> {
 
     //Show Frequent String
     public void showFrequent() {
-
         if(head == null) {
             System.out.println("Linked List is Empty.");
         } else {
@@ -75,6 +72,27 @@ class LinkedList <T> {
         for(Map.Entry<T,Integer> M : wordsFrequency.entrySet()) {
             System.out.println(M.getKey()+" : "+M.getValue());
             insertLast((T) (M.getKey()+":"+M.getValue()));
+        }
+    }
+
+    //Remove Word from Linked List
+    public void removeWord(T word) {
+        if(head == null) {
+            System.out.println("Linked List is Empty.");
+        } else {
+            if(word.compareTo((T)head.data) == 0) {
+                head = head.next;
+            } else {
+                Node<T> prevNode = head;
+                Node<T> temp = head.next;
+                while(prevNode != null) {
+                    if(temp.data.compareTo(word) == 0) {
+                        prevNode.next = temp.next;
+                    }
+                    prevNode = prevNode.next;
+                    temp = temp.next;
+                }
+            }
         }
     }
 }
